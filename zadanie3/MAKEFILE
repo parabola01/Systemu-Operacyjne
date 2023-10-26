@@ -1,0 +1,40 @@
+.SUFFIXES: .c .o .x
+
+NAME1 = 3a
+NAME2 = 3b
+NAME3 = 3c
+
+EXEC1 = $(NAME1).x
+EXEC2 = $(NAME2).x
+EXEC3 = $(NAME3).x
+
+OBJS1 = $(NAME1).o
+OBJS2 = $(NAME2).o
+OBJS3 = $(NAME3).o
+
+CFLAGS := -Wall -std=c99 -pedantic -O -fPIC
+LFLAGS = -Wall -std=c99 -pedantic -O
+
+CO = gcc
+LD = $(CO)
+
+%.o: %.c
+	$(CO) $(CFLAGS) -c $<
+
+$(EXEC1): $(OBJS1)
+	$(LD) -o $@ $(LFLAGS) $^
+$(EXEC2): $(OBJS2)
+	$(LD) -o $@ $(LFLAGS) $^
+$(EXEC3): $(OBJS3)
+	$(LD) -o $@ $(LFLAGS) $^
+
+.PHONY: run1 run2 run3
+
+run1: $(EXEC1) 
+run2: $(EXEC1) $(EXEC2)
+run3: $(EXEC1) $(EXEC3)
+
+
+.PHONY: clean
+clean:
+	rm -f *.o  *~ *.a *.so *.x core core* a.out; rm -rf ${LIB_DIR} 

@@ -1,0 +1,41 @@
+Aleksandra Jaroszek
+=======================================================================
+
+*Zawartosc: 
+============
+
+Katalog programy zawiera trzy programy z ćwiczenia trzeciego w języku C:
+---------------------------------------------------------------------------
+1. Program, który obsługuje sygnały; ignoruje, wykonuje operacje domyślną oraz przechwytuje
+i wykonuje własną obsługę. Przy pomocy funkcji pause() czeka na wydanie polecenia z powłoki.
+Wymaga podania trzech argumentów.
+-> aby go uruchomić, należy wykonać komende:
+   make run1 a następnie podać programowi odpowiednie argumenty wywołania:
+	tj.: nazwę: ./3a.x
+		rodzaj operacji: "d", "i" lub "o" czyli kolejno wykonanie operacji 
+			domyślnej, ignorowanie sygnały lub obsługa własna.
+			numer sygnału.
+Proces czeka na sygnał, który należy wysłać za pomocą sekwencji klawiszy lub z poziomu powłoki.
+
+2.Program uruchamia program 1 przy użyciu funkcji exec w procesie potomnym. Wysyła też 
+sygnał z procesu macierzystego za pomocą funkcji kill.
+Wymaga podania trzech argumentów.
+-> aby go uruchomić, należy wykonać komende:
+   make run2 a następnie podać programowi odpowiednie argumenty wywołania:
+	tj.: -nazwę: ./3b.x
+		-rodzaj operacji: "d", "i" lub "o" czyli kolejno wykonanie operacji 
+			domyślnej, ignorowanie sygnały lub obsługa własna.
+			-numer sygnału.
+
+3. Program tworzy proces potomny i sprawia, że staje sie on liderem nowej grupy procesów. 
+Uruchamia w nim 3 procesy potomne, które wykonują program 1. Z pierwszego procesu macierzystego
+wysyła sygnał do całej grupy procesów. Proces, który jest liderem grupy procesów zwraca status
+zakończenia przez funkcję wait.
+-> aby go uruchomić, należy wykonać komende:
+   make run2 a następnie podać programowi odpowiednie argumenty wywołania:
+	tj.: -nazwę: ./3c.x
+		-rodzaj operacji: "d", "i" lub "o" czyli kolejno wykonanie operacji 
+			domyślnej, ignorowanie sygnały lub obsługa własna.
+			-numer sygnału.
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean

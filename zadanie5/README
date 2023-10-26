@@ -1,0 +1,41 @@
+Aleksandra Jaroszek
+=======================================================================
+
+*Zawartosc: 
+============
+
+Katalog zawiera program z ćwiczenia piątego w języku C:
+
+1.Przy pomocy potoków nienazwanych implementuje problem "producenta i konsumenta". Producent pobiera 
+porcję bajtów z pliku tekstowego umieszcza je w potoku a następnie Konsument umieszcza "towar" 
+w innym (istniejącym lub dopiero tworzonym pliku tekstowym). Porównuje też dwa pliki dzięki użyciu 
+polecenia "diff". Potok jest usuwany przy pomocy funkcji zarejestrowanej przez atexit. W podpunkcie b:
+program pokazuje działanie potoków FIFO dla niespokrewnionych procesów przez uruchamianie ich z różnych 
+terminali tj. dla procesów. Porównuje też dwa pliki dzięki użyciu polecenia "diff".
+
+Wymaga podania trzech argumentów.
+-> aby go uruchomić z jednego terminala, należy wykonać komende:
+	make run1 a następnie podać programowi odpowiednie argumenty wywołania:
+		tj.: -nazwę: ./fifo.x
+			-plik tekstowy, z którego czytany jest tekst: w tym przypadku
+			 : tekst1.txt
+				-plik tekstowy, do którego umieszczany jest towar: 
+				 w tym przypadku: tekst2.txt
+-> aby go uruchomić z jednego terminala, należy wykonać komende:
+	make run2
+		terminal 1: make fifo
+			wykonuje: mkfifo -m 0644 potok
+		terminal 2: make xterm1
+			wykonuje: xterm -hold -title PRODUCENT -e ./producent.x tekst1.txt tekst2.txt potok &
+			wykonuje: xterm -hold -title KONSUMENT -e ./konsument.x tekst1.txt tekst2.txt potok
+		terminal 1: make unlik
+			wykonuje:  unlink potok
+ 				czyli zamyka potok nazwany
+->aby porównać oba pliki potwierdzając ich identyczność:
+	make diff
+		ktory wykonuje polecene:
+			diff -s (plik1) (plik2)
+->aby wyczyścić zbędne pliki w katalogu:
+	make clean
+->aby zarchiwizować oraz skompresować katalog, należy wykonać komendę:
+ 	make tar

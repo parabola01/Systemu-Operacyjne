@@ -1,0 +1,23 @@
+Aleksandra Jaroszek
+=======================================================================
+
+*Zawartosc: 
+============
+
+Katalog programy zawiera program z ćwiczenia drugiego w języku C:
+----------------------------------------------------------------------
+1. Program przy pomocy funkcji exec z 2a wywołuje działanie 2b i wypisuje
+identyfikatory trzech procesów potomnych.
+
+Przy n-krotnym wywołaniu funkcji fork-exec powstanie n procesów, ponieważ
+proces wywoływany przy pomocy funkcji exec zastępuje proces wywołujący go.
+
+Jak uruchomić program:
+======================
+-> Aby uruchomić program, należy wykonać komende:
+	makre run
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+---------------------------------------------------------------------------
+

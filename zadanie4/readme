@@ -1,0 +1,21 @@
+Aleksandra Jaroszek
+=======================================================================
+
+*Zawartosc: 
+============
+
+Katalog zawiera program z ćwiczenia czwartego w języku C:
+1. Program, który używa potoków nienazwanych, aby zobrazowac problem "producenta
+i konsumenta. Producent pobiera porcję bajtów z pliku tekstowego umieszcza je w potoku
+a następnie Konsument umieszcza "towar" w innym(istniejącym lub dopiero tworzonym
+pliku tekstowym). Porównuje też dwa pliki dzięki użyciu polecenia "diff".
+Wymaga podania trzech argumentów.
+-> aby go uruchomić, należy wykonać komende:
+	make run a następnie podać programowi odpowiednie argumenty wywołania:
+		tj.: -nazwę: ./zadanie4.x
+			-plik tekstowy, z którego czytany jest tekst: w tym przypadku
+			 : tekst1
+				-plik tekstowy, do którego umieszczany jest towar: 
+				 w tym przypadku: tekst2
+	make diff - komenda porównuje oba pliki potwierdzając ich identyczność oraz
+	czyści katalog
