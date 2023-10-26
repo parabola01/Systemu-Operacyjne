@@ -1,0 +1,64 @@
+Aleksandra Jaroszek
+=======================================================================
+
+*Zawartosc: 
+============
+
+Katalog programy zawiera pięć programów z ćwiczenia pierwszego w języku C:
+---------------------------------------------------------------------------
+1. Program wypisujący identyfikatory UID, GID, PID, PPID i PGID dla danego
+procesu.
+ Program sklada sie z jednego modulu: 
+    1) 1a.c  - program glowny. 
+2. Program wypisuje identyfikatory dla procesu macierzystego i siedmiu procesów
+potomnych.
+  Program sklada sie z jednego modulu: 
+    1) 1b.c  - program glowny. 
+3. Program wypisuje identyfikatory dla procesu macierzystego i siedmiu procesów
+potomnych. Używa funkcji sleep zamiast wait.
+  Program sklada sie z jednego modulu: 
+    1) 1c.c  - program glowny. 
+4. Program wypisuje identyfikatory dla procesu macierzystego i siedmiu procesów
+potomnych. Są grupowane pokoleniami od najstarszego do najmłodszego.
+  Program sklada sie z jednego modulu: 
+    1) 1d.c  - program glowny. 
+5. Program wypisuje identyfikatory dla procesu macierzystego i siedmiu procesów
+potomnych przy czym każdy każdy proces potomny staje się liderem swojej własnej
+grupy procesów.
+
+Powstanie 2^n procesów przy n-krotnym wywołaniu funkcji fork, gdyż każdy proces
+macierzysty tworzy swój proces potomny, który potem staje się procesem macierzystym
+dla kolejnego procesu potomnego, czyli ilość procesów rośnie wykładniczo.
+
+Drzewo genealogiczne do 1d:
+
+PID: 757, PPID: 750, PGID: 750
+	PID: 758, PPID: 757, PGID: 750
+		PID: 759, PPID: 758, PGID: 750
+			PID: 761, PPID: 759, PGID: 750
+				PID: 763, PPID: 760, PGID: 750
+	PID: 760, PPID: 757, PGID: 750
+		PID: 762, PPID: 758, PGID: 750
+	PID: 764, PPID: 757, PGID: 750
+
+*Jak uruchomić programy:
+========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania i uruchamiania 
+powyższych programów, a także czyszczenia katalogu.
+
+-> Aby uruchomić 1-szy program, należy wykonać komende:
+	make run1
+-> Aby uruchomić 2-gi program, należy wykonać komende:
+	make run2
+-> Aby uruchomić 3-ci program, należy wykonać komende:
+	make run3
+-> Aby uruchomić 4-ty program, należy wykonać komende:
+	make run4
+-> Aby uruchomić 5-ty program, należy wykonać komende:
+	make run5
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+-------------------------------------------------------------------------------
+
