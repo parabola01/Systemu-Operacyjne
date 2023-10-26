@@ -1,0 +1,27 @@
+==============================================================
+Autor: Aleksandra Jaroszek
+
+Zawartosc:
+
+Katalog zawiera program z zadania dziewiątego w języku C:
+--------------------------------------------------------------------
+
+I.  Program, przy pomocy muteksów, implementuje zadanie wzajemnego wykluczania.
+    Program, korzystając z funkcji pthread_create, tworzy n wątków.
+    Wątki wypisują po lewej stronie swoje numery, a po prawej informacje o aktualnie wykonywanej sekcji.
+    Wątek wykonujący sekcje krytyczną, przypisuje wartość zmiennej globalnej swojemu prywatnemu licznikowi,
+    następnie zwiększa jego wartość i po losowej liczbie sekund przypisuje jego wartość wspólnemu licznikowi.
+    Każdy wątek może powtarzać cykl kilka razy. Po zakończeniu działania wszystkich wątków, sprawdzana jest
+    wartość wspólnego licznika. Na ekran zostaje wypisany odpowiedni komunikat.
+    
+
+
+ Jak uruchomic program:
+==============================================================
+
+->aby uruchomić program, należy wykonać komende:
+   	make run
+->aby wyczyścić zbędne pliki w katalogu:
+	make clean
+->aby zarchiwizować oraz skompresować katalog, należy wykonać komendę:
+ 	make tar

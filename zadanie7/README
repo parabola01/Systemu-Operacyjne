@@ -1,0 +1,38 @@
+Aleksandra Jaroszek
+=======================================================================
+
+*Zawartosc: 
+============
+Katalog zawiera 3 programy, 2 biblioteki z funkcjmi oraz pliki Readme i Makefile.
+
+Program implementuje problem "producenta i konsumenta" przy użyciu pamięci dzielonej
+i semaforów. Używany jest bufor cykliczny umieszony w pamięci dzielonej. Dostęp do niego
+odbywa sie przez semafory.
+Program ten jest uruchamiany przy pomocy funkcji exec w procesach potomych tworzonych
+przez funkcję fork w procesie macierzystych.
+
+Program sklada sie z 7 modulow:
+1.main.c - tworzy semafory i pamiec dzielona, uruchamia programy producenta i konsumenta.
+2.producent.c - otwiera pamiec dzielona i ja mapuje, w sekcji krytycznej zapisuje 
+zawartosc pliku in.txt do bufora.
+3.konsument.c - otwiera pamiec dzielona i ja mapuje, w swojej sekcji krytycznej zapisuje
+zawartość wspolnego bufora do pliku out.txt.
+4.funkcjes.c - biblioteka zawierajaca funkcje dotyczace semaforow.
+5.funkcjes.h
+6.funkcjep.c - biblioteka zawierajaca funkcje dotyczace pamiecie dzielonej.
+7.funkcjep.h
+
+-> aby go uruchomić program z wykorzystaniem biblioteki statycznej, należy wykonać komende:
+	make run1
+->aby uruchomić program z wykorzystaniem 1 sposobu tworzenia biblioteki dzielonej 
+  należy wpisać komendę:
+    make run2
+->aby uruchomić program z wykorzystaniem 2 sposobu tworzenia biblioteki dzielonej 
+  należy wpisać komendę:
+    make run3
+->aby wyczyścić zbędne pliki w katalogu:
+	make clean
+->aby porównac zawartość plików in.txt i out.txt należy wpisać komendę
+   	make diff
+->aby zarchiwizować oraz skompresować katalog, należy wykonać komendę:
+ 	make tar
