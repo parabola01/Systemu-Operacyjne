@@ -1,0 +1,24 @@
+==============================================================
+Autor: Aleksandra Jaroszek
+
+Zawartosc:
+
+Katalog zawiera program z zadania dziesiątego w języku C:
+--------------------------------------------------------------------
+1. Prezentuje algorytm piekarni rozwiązujący wykluczanie się w sekcji krytycznej dla dowolnej N 
+liczby procesów.Program, korzystając z funkcji pthread_create, tworzy n wątków.
+Wątki wypisują po lewej stronie swoje numery, a po prawej informacje o aktualnie wykonywanej sekcji.
+Wątek wykonujący sekcje krytyczną, przypisuje wartość zmiennej globalnej swojemu prywatnemu licznikowi,
+następnie zwiększa jego wartość i po losowej liczbie sekund przypisuje jego wartość wspólnemu licznikowi.
+Każdy wątek może powtarzać cykl kilka razy. Po zakończeniu działania wszystkich wątków, sprawdzana jest
+wartość wspólnego licznika. Na ekran zostaje wypisany odpowiedni komunikat.
+
+Jak uruchomic program:
+==============================================================
+
+->aby uruchomić program, należy wykonać komende:
+   	make run
+->aby wyczyścić zbędne pliki w katalogu:
+	make clean
+->aby zarchiwizować oraz skompresować katalog, należy wykonać komendę:
+ 	make tar
